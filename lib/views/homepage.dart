@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quran_ku/widgets/homepage/last_read.dart';
 
 import '../controllers/local_storage_controller.dart';
+import '../widgets/homepage/list_surah.dart';
 import '../widgets/homepage/tab_body.dart';
 import '../widgets/homepage/tab_home.dart';
 
@@ -44,23 +46,23 @@ class HomePage extends StatelessWidget {
                     Icon(
                       Icons.search,
                       size: 24,
+                      color: Colors.white,
                     )
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
               TabHome(),
-              TabBody(),
+              TabBody(
+                children: [ListSurah(), Container()],
+              ),
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            localStorageController.changeTheme(!localStorageController.isDark);
-          },
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     localStorageController.changeTheme(!localStorageController.isDark);
+        //   },
+        // ),
       ),
     );
   }

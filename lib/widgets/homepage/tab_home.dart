@@ -24,7 +24,7 @@ class TabHome extends StatelessWidget {
           return Tab(
             child: Text(
               _tabX.tabList[index],
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16, color: Colors.black),
             ),
           );
         }),

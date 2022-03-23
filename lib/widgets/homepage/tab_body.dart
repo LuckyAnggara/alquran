@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:quran_ku/controllers/tab_home_controller.dart';
 
 class TabBody extends StatelessWidget {
-  TabBody({Key? key}) : super(key: key);
+  final List<Widget>? children;
+  TabBody({Key? key, this.children}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class TabBody extends StatelessWidget {
         ),
         child: TabBarView(
           controller: _tabX.controller,
-          children: [Container(), Container()],
+          children: children!,
         ),
       ),
     );
